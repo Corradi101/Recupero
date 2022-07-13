@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /*Tamaño del header*/
+  background-color: var(--black);
+}
+
+body {
+  width: 100%;
+  color: white;
+  background-color: var(--black);
+}
+
+:root {
+  --yellow: #ffc200;
+  --blue: #1907bd;
+  --black: #131415;
+  --grey: #2d3640;
+}
+
+.section-container {
+  background-color: var(--grey);
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 70px 0px;
+  width: 95%;
+  max-width: 1300px;
+}
+
+button {
+  background-color: var(--yellow);
+  border: 0px solid black;
+  outline: none;
+  width: 180px;
+  height: 40px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+
+button:hover {
+  background-color: var(--yellow);
+  transition: all 0.4s linear;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #ffc200;
+}
+
+.section-p {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.section-p-small {
+  font-size: 10px;
+  font-weight: 300;
+}
+
+
+/*Header*/
+.header-container {
+  position: sticky;
+  top: 0%;
+  z-index: 9999;
+}
+
+.header {
+  margin: 0 auto;
+  max-width: 10000px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 80px 0px 50px;
+  background-color: var(--black)
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 60%;
+}
+
+.navbar,
+.navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.navbar i {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+.navbar a {
+  color: white;
+  font-size: 22px;
+}
+
+.navbar-list li:last-child > a {
+  border: 1px solid white;
+  font-size: 14px;
+  padding: 8px 40px;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+}
+
+.navbar-list li:last-child > a:hover {
+  background-color: white;
+  color: var(--grey);
+  transition: all 0.3s linear;
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 0px 50px 0px 10px;
+  }
+  .navbar i {
+    display: block;
+  }
+  .navbar-list {
+    position: absolute;
+    background-color: var(--black);
+    flex-direction: column;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: none;
+    z-index: 9999;
+  }
+
+  #toggle-menu:checked + .navbar-list {
+    display: flex;
+  }
+}
+
+
+/* Inicio */
+
+.container-inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,1,0.75)), url(./img/reunion.jpg) no-repeat center/cover;
+}
+
+ .imagenes{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 200px;
+  /*background: url(./img/reunion.jpg) no-repeat center;*/
+  /*background-color: var(--blue);*/
+ }
+
+
+@media (max-width: 768px) {
+  .imagenes{
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .container-inicio {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+
+/*Nosotros*/
+
+.container-nosotros {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: min(5000px,100%);
+  gap: 100px;
+  background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,1,0.75)), url(./img/reunion2.jpg) no-repeat center/cover;
+}
+
+#nosotros {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 100px;
+ }
+
+.section-title {
+  text-align: center;
+  width: 100%;
+ 
+}
+
+@media (max-width: 576px) {
+  .container-nosotros{
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .nosotros{
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+
+/* Trabajamos*/
+
+.container-trabajamos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,1,0.75)), url(./img/reunion3.jpg) no-repeat center/cover;
+}
+
+.trabajamos{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: min(1000px,100%);
+  gap: 100px;
+}
+
+.section-title {
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .container-trabajamos{
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .trabajamos{
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 30px 0px;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+
+/* Contacto */
+
+#contacto {
+  flex-direction: column;
+  width: min(800px, 100%);
+  gap: 40px;
+  /*background-color: var(--yellow);*/
+}
+
+.container-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,1,0.75)), url(./img/reunion4.jpg) no-repeat center/cover;
+}
+
+@media (max-width: 768px) {
+  .contacto{
+    justify-content: center;
+    align-items: center;
+  }
+  .container-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* footer */
+
+.footer-redes {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 70px;
+  padding: 30px;
+  color: #ffc200;
+  background-color: var(--black);
+}
+
+.redes{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items:flex-start;
+  font-size: 50px;
+  min-height: 50px;
+  max-width: 500px;
+  gap: 50px;
+}
+
+.footer-social i:last-child {
+  margin-left: 10px;
+}
+
+.footer-terms {
+  display: flex;
+  gap: 25px;
+}
+
+@media (max-width: 945px) {
+  .footer {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-redes {
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-terms {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+  }
+}
